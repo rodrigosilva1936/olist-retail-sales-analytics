@@ -1,0 +1,22 @@
+# Raw datasets
+data/raw/*
+!data/raw/.gitkeep
+
+# SSIS / Visual Studio temporary files
+.vs/
+*.dtproj.user
+*.suo
+bin/
+obj/
+
+# Power BI temporary files
+*.pbit.cache
+*.pbix.tmp
+
+# Python (future use)
+.venv/
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
