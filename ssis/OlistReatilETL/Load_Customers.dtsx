@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Load_Customers"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{E8BA1B3C-4BD3-45D8-888F-CCF803C0FBAD}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{9BE83C31-1C8D-4596-ABB5-5E3634720659}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -575,13 +575,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Load_Customers\Flat File Source"
-          TopLeft="512.166638983622,72.2333328692781" />
-        <NodeLayout
           Size="171.2,41.6"
           Id="Package\Load_Customers\OLE DB Destination"
           TopLeft="499.666641305719,199.299998860955" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load_Customers\Flat File Source"
+          TopLeft="512.166638983622,72.2333328692781" />
         <EdgeLayout
           Id="Package\Load_Customers.Paths[Flat File Source Output]"
           TopLeft="586.51664014467,113.833332869278">

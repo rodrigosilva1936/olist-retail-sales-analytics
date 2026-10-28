@@ -1,0 +1,619 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/28/2026 4:52:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TORRERODRIGO"
+  DTS:CreatorName="TORRERODRIGO\rodri"
+  DTS:DTSID="{E94FAB3E-5029-44DB-9C19-544F519B2E39}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{548B827F-8289-443D-A032-163A721F28F1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B46D7240-28C0-43C1-A280-28463AF16E48}"
+      DTS:ObjectName="Gerenciador de Conexões de Arquivos Simples">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\rodri\Desktop\Projects\olist-retail-sales-analytics\data\raw\olist_order_payments_dataset.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_id"
+              DTS:DTSID="{E9BD8D05-308F-4987-B844-5FA0029EB933}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="payment_sequential"
+              DTS:DTSID="{3C210265-982B-4F91-8811-D5FB3652FE63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="payment_type"
+              DTS:DTSID="{0919CD9A-4BAB-447C-A662-0170BAAE35C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="payment_installments"
+              DTS:DTSID="{36DC9AC5-106A-4D99-808F-3B502BD2816A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="payment_value"
+              DTS:DTSID="{76A0E0A8-879E-4F50-AEB1-C03AF834DB49}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TorreRodrigo\SQLEXPRESS.OlistRetailDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E08FC631-CE07-4061-B237-082E65B5916F}"
+      DTS:ObjectName="TorreRodrigo\SQLEXPRESS.OlistRetailDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TorreRodrigo\SQLEXPRESS;User ID=;Initial Catalog=OlistRetailDW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{E08FC631-CE07-4061-B237-082E65B5916F}TorreRodrigo\SQLEXPRESS.OlistRetailDW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load_OrderPayments"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{b9703541-b76d-4980-9f4c-2ae446066643}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load_OrderPayments"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load_OrderPayments\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2070"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load_OrderPayments\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[order_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[order_id]"
+                      length="50"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_sequential]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_sequential]"
+                      length="3"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_sequential]"
+                      name="payment_sequential"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_type]"
+                      length="50"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_type]"
+                      name="payment_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_installments]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_installments]"
+                      length="10"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_installments]"
+                      name="payment_installments"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_value]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_value]"
+                      length="10"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_value]"
+                      name="payment_value"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_sequential]"
+                      dataType="wstr"
+                      length="3"
+                      name="payment_sequential" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="payment_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_installments]"
+                      dataType="wstr"
+                      length="10"
+                      name="payment_installments" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_value]"
+                      dataType="wstr"
+                      length="10"
+                      name="payment_value" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load_OrderPayments\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[Order_Payments]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load_OrderPayments\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TorreRodrigo\SQLEXPRESS.OlistRetailDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[TorreRodrigo\SQLEXPRESS.OlistRetailDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="order_id"
+                      externalMetadataColumnId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[payment_sequential]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="payment_sequential"
+                      externalMetadataColumnId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_sequential]"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_sequential]" />
+                    <inputColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[payment_type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="payment_type"
+                      externalMetadataColumnId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_type]"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_type]" />
+                    <inputColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[payment_installments]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="payment_installments"
+                      externalMetadataColumnId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_installments]"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_installments]" />
+                    <inputColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[payment_value]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="payment_value"
+                      externalMetadataColumnId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_value]"
+                      lineageId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output].Columns[payment_value]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_sequential]"
+                      dataType="wstr"
+                      length="3"
+                      name="payment_sequential" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="payment_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_installments]"
+                      dataType="wstr"
+                      length="10"
+                      name="payment_installments" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_value]"
+                      dataType="wstr"
+                      length="10"
+                      name="payment_value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load_OrderPayments\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load_OrderPayments\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load_OrderPayments\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load_OrderPayments\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load_OrderPayments.Paths[Flat File Source Output]"
+              endId="Package\Load_OrderPayments\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load_OrderPayments\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{8c4f2636-b807-400a-bcfd-9e2373450eda}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E08FC631-CE07-4061-B237-082E65B5916F}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.Order_Payments" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{42639744-7cb1-4ec1-99ff-801cd93f20f9}"
+      DTS:From="Package\Truncate Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Load_OrderPayments" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Truncate Table"
+          TopLeft="458.833311842549,128.466666190558" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Load_OrderPayments"
+          TopLeft="454.16664513035,232.166665431194" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="532.833311842549,170.066666190558">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.3333332878017,62.099999240636"
+              Start="0,0"
+              End="11.3333332878017,54.599999240636">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.049999620318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.049999620318"
+                    Point2="0,31.049999620318"
+                    Point3="4,31.049999620318" />
+                  <mssgle:LineSegment
+                    End="7.33333328780168,31.049999620318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.33333328780168,31.049999620318"
+                    Point2="11.3333332878017,31.049999620318"
+                    Point3="11.3333332878017,35.049999620318" />
+                  <mssgle:LineSegment
+                    End="11.3333332878017,54.599999240636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load_OrderPayments">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load_OrderPayments\Flat File Source"
+          TopLeft="512.166638983622,72.2333328692781" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load_OrderPayments\OLE DB Destination"
+          TopLeft="499.666641305719,199.299998860955" />
+        <EdgeLayout
+          Id="Package\Load_OrderPayments.Paths[Flat File Source Output]"
+          TopLeft="586.51664014467,113.833332869278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85.4666659916772"
+              Start="0,0"
+              End="0,77.9666659916772">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.9666659916772" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load_OrderPayments\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,700 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/28/2026 5:08:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TORRERODRIGO"
+  DTS:CreatorName="TORRERODRIGO\rodri"
+  DTS:DTSID="{5E84B31E-8119-4996-9229-E86DEEDB2614}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{065310C3-3926-4B71-B9B6-8423B64C3076}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{888C2081-C68A-4E2D-8D98-6D3608260A3C}"
+      DTS:ObjectName="Gerenciador de Conexões de Arquivos Simples">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\rodri\Desktop\Projects\olist-retail-sales-analytics\data\raw\olist_order_reviews_dataset.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_id"
+              DTS:DTSID="{32873F8B-9DEE-4C0F-A2AF-1B7D3A4B94F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_id"
+              DTS:DTSID="{AAF1D6AD-F351-4277-BB7E-0C2E2FAC5C47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_score"
+              DTS:DTSID="{B4622B19-DC3E-4C87-ACAD-F335B805F38C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_comment_title"
+              DTS:DTSID="{8C0BD492-C076-4756-AB83-128B0827CF79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_comment_message"
+              DTS:DTSID="{09BC46B1-806F-4878-A0DF-6D5A903474F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_creation_date"
+              DTS:DTSID="{2874C4D7-6DE9-4A0B-B030-2442300DFB1A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_answer_timestamp"
+              DTS:DTSID="{A03F9779-CC12-488B-AF36-99E1596B6ECE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TorreRodrigo\SQLEXPRESS.OlistRetailDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2BAA02F8-F8E8-4610-B337-4AAB1E037343}"
+      DTS:ObjectName="TorreRodrigo\SQLEXPRESS.OlistRetailDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TorreRodrigo\SQLEXPRESS;User ID=;Initial Catalog=OlistRetailDW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{2BAA02F8-F8E8-4610-B337-4AAB1E037343}TorreRodrigo\SQLEXPRESS.OlistRetailDW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load_OrderReviews"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{18952ab1-830b-4043-8d64-43a1e663f1dc}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load_OrderReviews"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load_OrderReviews\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2070"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load_OrderReviews\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_id]"
+                      length="50"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_id]"
+                      name="review_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[order_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[order_id]"
+                      length="50"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_score]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_score]"
+                      length="5"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_score]"
+                      name="review_score"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_comment_title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_comment_title]"
+                      length="30"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_comment_title]"
+                      name="review_comment_title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_comment_message]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_comment_message]"
+                      length="4000"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_comment_message]"
+                      name="review_comment_message"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_creation_date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_creation_date]"
+                      length="30"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_creation_date]"
+                      name="review_creation_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_answer_timestamp]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_answer_timestamp]"
+                      length="30"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_answer_timestamp]"
+                      name="review_answer_timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="review_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_score]"
+                      dataType="wstr"
+                      length="5"
+                      name="review_score" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_comment_title]"
+                      dataType="wstr"
+                      length="30"
+                      name="review_comment_title" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_comment_message]"
+                      dataType="wstr"
+                      length="4000"
+                      name="review_comment_message" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_creation_date]"
+                      dataType="wstr"
+                      length="30"
+                      name="review_creation_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[review_answer_timestamp]"
+                      dataType="wstr"
+                      length="30"
+                      name="review_answer_timestamp" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load_OrderReviews\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[Order_Reviews]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load_OrderReviews\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TorreRodrigo\SQLEXPRESS.OlistRetailDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[TorreRodrigo\SQLEXPRESS.OlistRetailDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="order_id"
+                      externalMetadataColumnId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[review_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="review_id"
+                      externalMetadataColumnId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_id]"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_id]" />
+                    <inputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[review_score]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="review_score"
+                      externalMetadataColumnId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_score]"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_score]" />
+                    <inputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[review_comment_title]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="review_comment_title"
+                      externalMetadataColumnId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_coment_title]"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_comment_title]" />
+                    <inputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[review_comment_message]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="review_comment_message"
+                      externalMetadataColumnId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_coment_message]"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_comment_message]" />
+                    <inputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[review_creation_date]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="review_creation_date"
+                      externalMetadataColumnId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_creation_date]"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_creation_date]" />
+                    <inputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[review_answer_timestamp]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="review_answer_timestamp"
+                      externalMetadataColumnId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_answer_timestamp]"
+                      lineageId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output].Columns[review_answer_timestamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="review_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_score]"
+                      dataType="wstr"
+                      length="5"
+                      name="review_score" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_coment_title]"
+                      dataType="wstr"
+                      length="30"
+                      name="review_coment_title" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_coment_message]"
+                      dataType="nText"
+                      name="review_coment_message" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_creation_date]"
+                      dataType="wstr"
+                      length="30"
+                      name="review_creation_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_answer_timestamp]"
+                      dataType="wstr"
+                      length="30"
+                      name="review_answer_timestamp" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load_OrderReviews\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load_OrderReviews\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load_OrderReviews\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load_OrderReviews\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load_OrderReviews.Paths[Flat File Source Output]"
+              endId="Package\Load_OrderReviews\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load_OrderReviews\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{95f57e9f-7ba1-4b70-b5b4-0bf31d49c2e9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2BAA02F8-F8E8-4610-B337-4AAB1E037343}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.Order_Reviews" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{0e9f0da7-56d5-4971-9ebc-717f3980c0b6}"
+      DTS:From="Package\Truncate Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Load_OrderReviews" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Truncate Table"
+          TopLeft="504.666642671659,133.666666154398" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Load_OrderReviews"
+          TopLeft="495.833309520451,224.366665485434" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="580.649976096055,175.266666154398">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.0999993310363"
+              Start="0,0"
+              End="0,41.5999993310363">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5999993310363" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load_OrderReviews">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load_OrderReviews\OLE DB Destination"
+          TopLeft="555.499971588454,199.299998860955" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load_OrderReviews\Flat File Source"
+          TopLeft="567.999970905484,76.2333330500788" />
+        <EdgeLayout
+          Id="Package\Load_OrderReviews.Paths[Flat File Source Output]"
+          TopLeft="642.349971246969,117.833333050079">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81.4666658108762"
+              Start="0,0"
+              End="0,73.9666658108762">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.9666658108762" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load_OrderReviews\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
