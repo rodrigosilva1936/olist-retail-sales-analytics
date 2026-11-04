@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{065310C3-3926-4B71-B9B6-8423B64C3076}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{2AD2D473-4028-47D7-A043-04E323E07311}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -108,7 +108,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TorreRodrigo\SQLEXPRESS;User ID=;Initial Catalog=OlistRetailDW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{2BAA02F8-F8E8-4610-B337-4AAB1E037343}TorreRodrigo\SQLEXPRESS.OlistRetailDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=TorreRodrigo\SQLEXPRESS;Initial Catalog=OlistRetailDW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{2BAA02F8-F8E8-4610-B337-4AAB1E037343}TorreRodrigo\SQLEXPRESS.OlistRetailDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -613,13 +613,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="148,41.6"
-          Id="Package\Truncate Table"
-          TopLeft="504.666642671659,133.666666154398" />
-        <NodeLayout
           Size="173.6,41.6"
           Id="Package\Load_OrderReviews"
           TopLeft="495.833309520451,224.366665485434" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Truncate Table"
+          TopLeft="504.666642671659,133.666666154398" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
           TopLeft="580.649976096055,175.266666154398">

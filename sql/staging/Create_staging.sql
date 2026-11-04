@@ -120,3 +120,48 @@ FROM stg.Geo_Location
 ALTER TABLE stg.Order_Reviews
 ALTER COLUMN review_coment_message NVARCHAR(MAX) NULL;
 GO
+
+SELECT COUNT(*) AS TotalRows 
+FROM stg.Customers
+UNION ALL 
+SELECT COUNT(*) 
+FROM stg.Orders
+UNION ALL
+SELECT COUNT(*) 
+FROM stg.Order_Items
+UNION ALL
+SELECT COUNT(*) 
+FROM stg.Order_Payments
+UNION ALL
+SELECT COUNT(*) 
+FROM stg.Order_Reviews
+UNION ALL
+SELECT COUNT(*) 
+FROM stg.Geo_Location
+UNION ALL
+SELECT COUNT(*)
+FROM stg.Products
+UNION ALL
+SELECT COUNT(*)
+FROM stg.Product_Category_Translation
+UNION ALL
+SELECT COUNT(*)
+FROM stg.Product_Category_Translation
+
+
+SELECT TOP 10 *
+FROM stg.Orders
+
+
+
+SELECT COUNT(*) AS Nº_vendas, seller_id
+FROM stg.Sellers
+GROUP BY seller_id
+HAVING COUNT(*) > 1
+
+SELECT COUNT(*)
+FROM stg.Sellers
+WHERE seller_id = ''
+
+
+
